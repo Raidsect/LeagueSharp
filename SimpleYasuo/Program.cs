@@ -46,7 +46,7 @@ namespace SimpleYasuo
             
             
             //Base menu
-            RS = new Menu("RS" + ChampName, ChampName, true);
+            RS = new Menu("Simple" + ChampName, ChampName, true);
 
             //Orbwalker and menu
             //RS.AddSubMenu(new Menu("Orbwalker", "Orbwalker"));
