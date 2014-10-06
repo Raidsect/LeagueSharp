@@ -31,7 +31,7 @@ namespace SimpleYasuo
             //Q.SetSkillshot(SimpleYasuo.getNewQSpeed(), 15f, float.MaxValue, false, SkillshotType.SkillshotLine);
 
             Q2 = new Spell(SpellSlot.Q, 1125);
-            Q2.SetSkillshot(0.5f, 50f, 1450f, false, SkillshotType.SkillshotLine);
+            //Q2.SetSkillshot(0.5f, 50f, 1450f, false, SkillshotType.SkillshotLine);
 
             /*
             QCir = new Spell(SpellSlot.Q, 305);
@@ -105,6 +105,7 @@ namespace SimpleYasuo
             }
             */
             Q.SetSkillshot(getNewQSpeed(), 15f, float.MaxValue, false, SkillshotType.SkillshotLine);
+            Q2.SetSkillshot(getNewQSpeed(), 50f, 1450f, false, SkillshotType.SkillshotLine);
 
             var target = SimpleTs.GetTarget(Q.Range, SimpleTs.DamageType.Physical);
             if (target == null) return;
