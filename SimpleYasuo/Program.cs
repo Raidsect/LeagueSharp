@@ -27,10 +27,10 @@ namespace SimpleYasuo
         {
             if (Player.BaseSkinName != ChampName) return;
 
-            Q = new Spell(SpellSlot.Q, 475);
-            Q.SetSkillshot(0.5f, 15f, float.MaxValue, false, SkillshotType.SkillshotLine);
+            Q = new Spell(SpellSlot.Q, 465);
+            //Q.SetSkillshot(SimpleYasuo.getNewQSpeed(), 15f, float.MaxValue, false, SkillshotType.SkillshotLine);
 
-            Q2 = new Spell(SpellSlot.Q, 1125);
+            Q2 = new Spell(SpellSlot.Q, 1150);
             Q2.SetSkillshot(0.5f, 50f, 1450f, false, SkillshotType.SkillshotLine);
 
             /*
@@ -81,13 +81,21 @@ namespace SimpleYasuo
             Drawing.OnDraw += Drawing_OnDraw; // Add onDraw
             Game.OnGameUpdate += Game_OnGameUpdate; // adds OnGameUpdate (Same as onTick in bol)
 
-            Game.PrintChat("Simple" + ChampName + " by Raidsect loaded");
+            Game.PrintChat("RS" + ChampName + " loaded! By Raidsect");
         }
 
         public static bool isQEmpowered()
         {
             return Player.HasBuff("yasuoq3w", true);
         }
+
+        public static float getNewQSpeed()
+        {
+            float a = 0.5f;//s
+            float b = 1 / a * Player.AttackSpeedMod;
+            return 1 / b;
+        }
+
         static void Game_OnGameUpdate(EventArgs args)
         {
             /*
@@ -96,7 +104,8 @@ namespace SimpleYasuo
                 Combo();
             }
             */
-            
+            Q.SetSkillshot(getNewQSpeed(), 15f, float.MaxValue, false, SkillshotType.SkillshotLine);
+
             var target = SimpleTs.GetTarget(Q.Range, SimpleTs.DamageType.Physical);
             if (target == null) return;
 
@@ -112,7 +121,7 @@ namespace SimpleYasuo
                 }
 
             if (Program.RS.Item("Auto Emp Q").GetValue<bool>())
-                if (target.IsValidTarget(Q2.Range) && Q2.IsReady() && isQEmpowered() && Q2pred >= HitChance.Medium)
+                if (target.IsValidTarget(Q2.Range) && Q2.IsReady() && isQEmpowered() && Q2pred >= HitChance.High)
                 {
                     Q2.Cast(target, RS.Item("Packets").GetValue<bool>());
                 }
