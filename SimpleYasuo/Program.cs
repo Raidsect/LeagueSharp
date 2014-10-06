@@ -68,7 +68,7 @@ namespace SimpleYasuo
             //RS.SubMenu("Combo").AddItem(new MenuItem("ComboActive", "Combo").SetValue(new KeyBind(32, KeyBindType.Press)));
 
             //Exploits
-            RS.AddItem(new MenuItem("NFE", "No-Face Exploit").SetValue(true));
+            RS.AddItem(new MenuItem("Packets", "Packets").SetValue(true));
 
             //Drawings
             //RS.AddItem(new MenuItem("Disable All", "Disable All").SetValue(false));
@@ -108,13 +108,13 @@ namespace SimpleYasuo
             if (Program.RS.Item("Auto Q").GetValue<bool>())                
                 if (target.IsValidTarget(Q.Range) && Q.IsReady() && !isQEmpowered() && Qpred >= HitChance.High)
                 {
-                    Q.Cast(target, RS.Item("NFE").GetValue<bool>());
+                    Q.Cast(target, RS.Item("Packets").GetValue<bool>());
                 }
 
             if (Program.RS.Item("Auto Emp Q").GetValue<bool>())
                 if (target.IsValidTarget(Q2.Range) && Q2.IsReady() && isQEmpowered() && Q2pred >= HitChance.Medium)
                 {
-                    Q2.Cast(target, RS.Item("NFE").GetValue<bool>());
+                    Q2.Cast(target, RS.Item("Packets").GetValue<bool>());
                 }
 
         }
