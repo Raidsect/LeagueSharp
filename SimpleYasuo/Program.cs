@@ -30,7 +30,7 @@ namespace SimpleYasuo
             Q = new Spell(SpellSlot.Q, 465);
             //Q.SetSkillshot(SimpleYasuo.getNewQSpeed(), 15f, float.MaxValue, false, SkillshotType.SkillshotLine);
 
-            Q2 = new Spell(SpellSlot.Q, 1150);
+            Q2 = new Spell(SpellSlot.Q, 1125);
             Q2.SetSkillshot(0.5f, 50f, 1450f, false, SkillshotType.SkillshotLine);
 
             /*
