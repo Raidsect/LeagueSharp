@@ -27,10 +27,10 @@ namespace SimpleYasuo
         {
             if (Player.BaseSkinName != ChampName) return;
 
-            Q = new Spell(SpellSlot.Q, 450);
+            Q = new Spell(SpellSlot.Q, 475);
             Q.SetSkillshot(0.5f, 15f, float.MaxValue, false, SkillshotType.SkillshotLine);
 
-            Q2 = new Spell(SpellSlot.Q, 1100);
+            Q2 = new Spell(SpellSlot.Q, 1125);
             Q2.SetSkillshot(0.5f, 50f, 1450f, false, SkillshotType.SkillshotLine);
 
             /*
@@ -81,7 +81,7 @@ namespace SimpleYasuo
             Drawing.OnDraw += Drawing_OnDraw; // Add onDraw
             Game.OnGameUpdate += Game_OnGameUpdate; // adds OnGameUpdate (Same as onTick in bol)
 
-            Game.PrintChat("RS" + ChampName + " loaded! By Raidsect");
+            Game.PrintChat("Simple" + ChampName + " by Raidsect loaded");
         }
 
         public static bool isQEmpowered()
@@ -112,7 +112,7 @@ namespace SimpleYasuo
                 }
 
             if (Program.RS.Item("Auto Emp Q").GetValue<bool>())
-                if (target.IsValidTarget(Q2.Range) && Q2.IsReady() && isQEmpowered() && Q2pred >= HitChance.High)
+                if (target.IsValidTarget(Q2.Range) && Q2.IsReady() && isQEmpowered() && Q2pred >= HitChance.Medium)
                 {
                     Q2.Cast(target, RS.Item("NFE").GetValue<bool>());
                 }
