@@ -81,7 +81,7 @@ namespace SimpleYasuo
             Drawing.OnDraw += Drawing_OnDraw; // Add onDraw
             Game.OnGameUpdate += Game_OnGameUpdate; // adds OnGameUpdate (Same as onTick in bol)
 
-            Game.PrintChat("RS" + ChampName + " loaded! By Raidsect");
+            Game.PrintChat("Simple" + ChampName + " by Raidsect loaded");
         }
 
         public static bool isQEmpowered()
