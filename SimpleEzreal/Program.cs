@@ -38,7 +38,11 @@ namespace SimpleEzreal
             SimpleTs.AddToMenu(ts);
             RS.AddSubMenu(ts);
 
-            //Hook Keybind
+            //Orbwalker and menu
+            RS.AddSubMenu(new Menu("Orbwalker", "Orbwalker"));
+            Orbwalker = new Orbwalking.Orbwalker(RS.SubMenu("Orbwalker"));
+            
+            //Mystic Shot Keybind
             RS.AddItem(new MenuItem("Mystic", "Mystic Shot").SetValue(new KeyBind(32, KeyBindType.Press)));
 
             //Exploits
