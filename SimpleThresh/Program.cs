@@ -27,8 +27,8 @@ namespace SimpleThresh
         {
             if (Player.BaseSkinName != ChampName) return;
 
-            Q = new Spell(SpellSlot.Q, 1100);
-            Q.SetSkillshot(0.5f, 70f, 1900f, true, SkillshotType.SkillshotLine);
+            Q = new Spell(SpellSlot.Q, 1050);
+            Q.SetSkillshot(0.5f, 60f, 1900f, true, SkillshotType.SkillshotLine);
             
             //Base menu
             RS = new Menu("Simple" + ChampName, ChampName, true);
