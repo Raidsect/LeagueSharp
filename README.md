@@ -4,18 +4,18 @@ LeagueSharp
 L# Assemblies
 
 
-Ezreal
-======
+SimpleEzreal
+============
 + Cast Q on key press  
 + Draw Q
 
-Thresh
-======
+SimpleThresh
+============
 + Cast Q on key press  
 + Draw Q
 
-Yasuo
-=====
+SimpleYasuo
+===========
 + Auto Q  
 + Auto Empowered Q  
 + Draw Q  
