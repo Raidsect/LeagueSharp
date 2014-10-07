@@ -28,7 +28,7 @@ namespace SimpleEzreal
             if (Player.BaseSkinName != ChampName) return;
 
             Q = new Spell(SpellSlot.Q, 1150);
-            Q.SetSkillshot(0.25f, 50f, 1850f, true, SkillshotType.SkillshotLine);
+            Q.SetSkillshot(0.25f, 50f, 1925f, true, SkillshotType.SkillshotLine);
 
             //Base menu
             RS = new Menu("Simple" + ChampName, ChampName, true);
