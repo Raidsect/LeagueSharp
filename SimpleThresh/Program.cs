@@ -27,8 +27,8 @@ namespace SimpleThresh
         {
             if (Player.BaseSkinName != ChampName) return;
 
-            Q = new Spell(SpellSlot.Q, 1050);
-            Q.SetSkillshot(0.5f, 70f, 1850f, true, SkillshotType.SkillshotLine);
+            Q = new Spell(SpellSlot.Q, 1100);
+            Q.SetSkillshot(0.5f, 70f, 1900f, true, SkillshotType.SkillshotLine);
             
             //Base menu
             RS = new Menu("Simple" + ChampName, ChampName, true);
@@ -70,7 +70,7 @@ namespace SimpleThresh
         {
             if (Program.RS.Item("Draw Q").GetValue<bool>())
                 if (Q.Level > 0 && Q.IsReady())
-                    Utility.DrawCircle(Player.Position, Q.Range, Color.Azure);
+                    Utility.DrawCircle(Player.Position, Q.Range, Color.Aqua);
         }
         
         public static void Hook()
